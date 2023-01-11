@@ -1,8 +1,7 @@
 {
   "name": "airon",
   "version": "0.1.0",
-  "homepage": "https://airon.github.io/portfolio/",
-  "deploy": "gh-pages -d build",
+  "homepage": "https://aironherbert.github.io/portfolio/",
   "private": true,
   "dependencies": {
     "@emotion/styled": "^11.10.5",
@@ -25,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
