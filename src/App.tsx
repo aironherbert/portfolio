@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import CustomizedTimeline from "./components/timeline";
+import CustomizedTimeline from "./components/timelines/jobs";
 import SchoolIcon from "@mui/icons-material/School";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
@@ -81,7 +81,7 @@ const ToolButton = styled(Link)`
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="portfolio">
       <Wrapper>
         <Header>
           <div style={{ fontWeight: 700, fontSize: "1.1rem" }}>
@@ -106,23 +106,23 @@ export default function App() {
               <AlternateEmailIcon fontSize="large" />
             </ToolButton>
           </ToolButtons>
-          <ToolContent>
-            <Routes>
-              <Route path="/">
-                <Route index element={<div />} />
-                <Route
-                  path="/jobs"
-                  element={
+          <Routes>
+            <Route path="/">
+              <Route index element={<div />} />
+              <Route
+                path="/jobs"
+                element={
+                  <ToolContent>
                     <CustomizedTimeline
                       style={{ marginLeft: "20px", color: "white" }}
                     />
-                  }
-                />
-                <Route path="contact" element={<div>Contact</div>} />
-                <Route path="*" element={<div>Contact</div>} />
-              </Route>
-            </Routes>
-          </ToolContent>
+                  </ToolContent>
+                }
+              />
+              <Route path="contact" element={<div>Contact</div>} />
+              <Route path="*" element={<div></div>} />
+            </Route>
+          </Routes>
           <WorkContainer />
         </Body>
       </Wrapper>

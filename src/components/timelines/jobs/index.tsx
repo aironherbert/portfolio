@@ -32,7 +32,7 @@ export default function OppositeContentTimeline({ style }: Proptypes) {
             <div style={{ fontSize: "11px", marginBottom: "5px" }}>
               2021 - Now
             </div>
-            <div style={{ fontSize: "12px" }}>Desenvolvedor Full Stack</div>
+            <div style={{ fontSize: "12px" }}>Full Stack Developer</div>
           </div>
         </TimelineContent>
       </TimelineItem>
@@ -46,7 +46,7 @@ export default function OppositeContentTimeline({ style }: Proptypes) {
           <div style={{ fontSize: "11px", marginBottom: "5px" }}>
             2018 - 2021
           </div>
-          <div style={{ fontSize: "12px" }}>Pesquisador Científico</div>
+          <div style={{ fontSize: "12px" }}>Scientific Researcher</div>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -71,7 +71,7 @@ export default function OppositeContentTimeline({ style }: Proptypes) {
           <div style={{ fontSize: "11px", marginBottom: "5px" }}>
             May 2017 - Sept. 2017
           </div>
-          <div style={{ fontSize: "12px" }}>Estagiário</div>
+          <div style={{ fontSize: "12px" }}>Intern</div>
         </TimelineContent>
       </TimelineItem>
     </Timeline>
