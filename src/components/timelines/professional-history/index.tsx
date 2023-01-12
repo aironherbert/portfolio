@@ -5,12 +5,22 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
+import styled from "@emotion/styled";
 
 interface Proptypes {
   style?: React.CSSProperties;
 }
 
-export default function OppositeContentTimeline({ style }: Proptypes) {
+const TimelineItemStyled = styled(TimelineItem)`
+  color: #b4b4b4;
+
+  cursor: pointer;
+  &:hover {
+    color: white;
+  }
+`;
+
+export default function ProfessionalHistoryTimeline({ style }: Proptypes) {
   return (
     <Timeline
       sx={{
@@ -21,22 +31,20 @@ export default function OppositeContentTimeline({ style }: Proptypes) {
         ...style,
       }}
     >
-      <TimelineItem>
+      <TimelineItemStyled>
         <TimelineSeparator>
           <TimelineDot />
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-          <div>
-            <div>Coleção.Moda</div>
-            <div style={{ fontSize: "11px", marginBottom: "5px" }}>
-              2021 - Now
-            </div>
-            <div style={{ fontSize: "12px" }}>Full Stack Developer</div>
+          <div>Coleção.Moda</div>
+          <div style={{ fontSize: "11px", marginBottom: "5px" }}>
+            2021 - Now
           </div>
+          <div style={{ fontSize: "12px" }}>Full Stack Developer</div>
         </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
+      </TimelineItemStyled>
+      <TimelineItemStyled>
         <TimelineSeparator>
           <TimelineDot />
           <TimelineConnector />
@@ -48,8 +56,8 @@ export default function OppositeContentTimeline({ style }: Proptypes) {
           </div>
           <div style={{ fontSize: "12px" }}>Scientific Researcher</div>
         </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
+      </TimelineItemStyled>
+      <TimelineItemStyled>
         <TimelineSeparator>
           <TimelineDot />
           <TimelineConnector />
@@ -61,8 +69,8 @@ export default function OppositeContentTimeline({ style }: Proptypes) {
           </div>
           <div style={{ fontSize: "12px" }}>Monitor</div>
         </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
+      </TimelineItemStyled>
+      <TimelineItemStyled>
         <TimelineSeparator>
           <TimelineDot />
         </TimelineSeparator>
@@ -73,7 +81,7 @@ export default function OppositeContentTimeline({ style }: Proptypes) {
           </div>
           <div style={{ fontSize: "12px" }}>Intern</div>
         </TimelineContent>
-      </TimelineItem>
+      </TimelineItemStyled>
     </Timeline>
   );
 }

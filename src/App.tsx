@@ -1,10 +1,13 @@
 import styled from "@emotion/styled";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import CustomizedTimeline from "./components/timelines/jobs";
 import SchoolIcon from "@mui/icons-material/School";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import ProfessionalHistoryTimeline from "./components/timelines/professional-history";
+import SchoolRecordsTimeline from "./components/timelines/school-records";
+import { Tooltip } from "@mui/material";
+import { useState } from "react";
 
 const Wrapper = styled.div`
   background-color: #282828;
@@ -74,12 +77,13 @@ const ToolButton = styled(Link)`
   color: #707070;
 
   &:hover {
-    border-left: 2px solid white;
     color: white;
   }
 `;
 
 export default function App() {
+  const [selectedTool, setSelectedTool] = useState("school-records");
+  console.log(selectedTool);
   return (
     <BrowserRouter basename="portfolio">
       <Wrapper>
@@ -93,37 +97,92 @@ export default function App() {
         </ToolBar>
         <Body>
           <ToolButtons>
-            <ToolButton to="/">
-              <SchoolIcon fontSize="large" />
+            <ToolButton
+              to="/school-records"
+              style={{
+                borderLeft:
+                  selectedTool === "school-records"
+                    ? "2px solid white"
+                    : "none",
+              }}
+              onClick={() => setSelectedTool("school-records")}
+            >
+              <Tooltip placement="right" title="School Records">
+                <SchoolIcon fontSize="large" />
+              </Tooltip>
             </ToolButton>
-            <ToolButton to="/jobs">
-              <WorkHistoryIcon fontSize="large" />
+            <ToolButton
+              to="/professional-history"
+              style={{
+                borderLeft:
+                  selectedTool === "professional-history"
+                    ? "2px solid white"
+                    : "none",
+              }}
+              onClick={() => setSelectedTool("professional-history")}
+            >
+              <Tooltip placement="right" title="Professional History">
+                <WorkHistoryIcon fontSize="large" />
+              </Tooltip>
             </ToolButton>
-            <ToolButton to="/">
-              <FitnessCenterIcon fontSize="large" />
+            <ToolButton
+              to="/skills"
+              style={{
+                borderLeft:
+                  selectedTool === "skills" ? "2px solid white" : "none",
+              }}
+              onClick={() => setSelectedTool("skills")}
+            >
+              <Tooltip placement="right" title="Skills">
+                <FitnessCenterIcon fontSize="large" />
+              </Tooltip>
             </ToolButton>
-            <ToolButton to="/">
-              <AlternateEmailIcon fontSize="large" />
+            <ToolButton
+              to="/contact"
+              style={{
+                borderLeft:
+                  selectedTool === "contact" ? "2px solid white" : "none",
+              }}
+              onClick={() => setSelectedTool("contact")}
+            >
+              <Tooltip placement="right" title="Contact">
+                <AlternateEmailIcon fontSize="large" />
+              </Tooltip>
             </ToolButton>
           </ToolButtons>
           <Routes>
             <Route path="/">
               <Route index element={<div />} />
               <Route
-                path="/jobs"
+                path="school-records"
                 element={
-                  <ToolContent>
-                    <CustomizedTimeline
-                      style={{ marginLeft: "20px", color: "white" }}
-                    />
-                  </ToolContent>
+                  <>
+                    <ToolContent>
+                      <SchoolRecordsTimeline
+                        style={{ marginLeft: "20px", color: "white" }}
+                      />
+                    </ToolContent>
+                    <WorkContainer />
+                  </>
+                }
+              />
+              <Route
+                path="/professional-history"
+                element={
+                  <>
+                    <ToolContent>
+                      <ProfessionalHistoryTimeline
+                        style={{ marginLeft: "20px", color: "white" }}
+                      />
+                    </ToolContent>
+                    <WorkContainer />
+                  </>
                 }
               />
               <Route path="contact" element={<div>Contact</div>} />
               <Route path="*" element={<div></div>} />
             </Route>
           </Routes>
-          <WorkContainer />
         </Body>
       </Wrapper>
     </BrowserRouter>
