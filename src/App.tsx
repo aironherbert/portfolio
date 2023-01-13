@@ -83,7 +83,6 @@ const ToolButton = styled(Link)`
 
 export default function App() {
   const [selectedTool, setSelectedTool] = useState("school-records");
-  console.log(selectedTool);
   return (
     <BrowserRouter basename="portfolio">
       <Wrapper>
@@ -103,7 +102,7 @@ export default function App() {
                 borderLeft:
                   selectedTool === "school-records"
                     ? "2px solid white"
-                    : "none",
+                    : "2px solid #333333",
               }}
               onClick={() => setSelectedTool("school-records")}
             >
@@ -117,7 +116,7 @@ export default function App() {
                 borderLeft:
                   selectedTool === "professional-history"
                     ? "2px solid white"
-                    : "none",
+                    : "2px solid #333333",
               }}
               onClick={() => setSelectedTool("professional-history")}
             >
@@ -129,7 +128,9 @@ export default function App() {
               to="/skills"
               style={{
                 borderLeft:
-                  selectedTool === "skills" ? "2px solid white" : "none",
+                  selectedTool === "skills"
+                    ? "2px solid white"
+                    : "2px solid #333333",
               }}
               onClick={() => setSelectedTool("skills")}
             >
@@ -141,7 +142,9 @@ export default function App() {
               to="/contact"
               style={{
                 borderLeft:
-                  selectedTool === "contact" ? "2px solid white" : "none",
+                  selectedTool === "contact"
+                    ? "2px solid white"
+                    : "2px solid #333333",
               }}
               onClick={() => setSelectedTool("contact")}
             >
