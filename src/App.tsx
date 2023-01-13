@@ -4,10 +4,13 @@ import SchoolIcon from "@mui/icons-material/School";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import PersonIcon from "@mui/icons-material/Person";
 import ProfessionalHistoryTimeline from "./components/timelines/professional-history";
 import SchoolRecordsTimeline from "./components/timelines/school-records";
+import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import { Tooltip } from "@mui/material";
 import { useState } from "react";
+import Profile from "./components/profile";
 
 const Wrapper = styled.div`
   background-color: #282828;
@@ -66,6 +69,8 @@ const WorkContainer = styled.div`
   flex-direction: column;
   flex: 4;
   background-color: #1e1e1e;
+  color: white;
+  padding: 0 1em;
 `;
 
 const ToolButton = styled(Link)`
@@ -88,7 +93,7 @@ export default function App() {
       <Wrapper>
         <Header>
           <div style={{ fontWeight: 700, fontSize: "1.1rem" }}>
-            Airon Herbert - Software Developer
+            Airon Herbert - Software Engineer
           </div>
         </Header>
         <ToolBar>
@@ -96,6 +101,20 @@ export default function App() {
         </ToolBar>
         <Body>
           <ToolButtons>
+            <ToolButton
+              to="/"
+              style={{
+                borderLeft:
+                  selectedTool === "profile"
+                    ? "2px solid white"
+                    : "2px solid #333333",
+              }}
+              onClick={() => setSelectedTool("profile")}
+            >
+              <Tooltip placement="right" title="Profile">
+                <PersonIcon fontSize="large" />
+              </Tooltip>
+            </ToolButton>
             <ToolButton
               to="/school-records"
               style={{
@@ -122,6 +141,20 @@ export default function App() {
             >
               <Tooltip placement="right" title="Professional History">
                 <WorkHistoryIcon fontSize="large" />
+              </Tooltip>
+            </ToolButton>
+            <ToolButton
+              to="/extracurricular"
+              style={{
+                borderLeft:
+                  selectedTool === "extracurricular"
+                    ? "2px solid white"
+                    : "2px solid #333333",
+              }}
+              onClick={() => setSelectedTool("extracurricular")}
+            >
+              <Tooltip placement="right" title="Extracurricular Activities">
+                <RocketLaunchIcon fontSize="large" />
               </Tooltip>
             </ToolButton>
             <ToolButton
@@ -155,7 +188,7 @@ export default function App() {
           </ToolButtons>
           <Routes>
             <Route path="/">
-              <Route index element={<div />} />
+              <Route index element={<Profile />} />
               <Route
                 path="school-records"
                 element={
@@ -165,7 +198,9 @@ export default function App() {
                         style={{ marginLeft: "20px", color: "white" }}
                       />
                     </ToolContent>
-                    <WorkContainer />
+                    <WorkContainer>
+                      <h1>School Records</h1>
+                    </WorkContainer>
                   </>
                 }
               />
@@ -178,12 +213,14 @@ export default function App() {
                         style={{ marginLeft: "20px", color: "white" }}
                       />
                     </ToolContent>
-                    <WorkContainer />
+                    <WorkContainer>
+                      <h1>Professional History</h1>
+                    </WorkContainer>
                   </>
                 }
               />
               <Route path="contact" element={<div>Contact</div>} />
-              <Route path="*" element={<div></div>} />
+              <Route path="*" element={<div>*</div>} />
             </Route>
           </Routes>
         </Body>
