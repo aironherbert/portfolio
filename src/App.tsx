@@ -87,7 +87,7 @@ const ToolButton = styled(Link)`
 `;
 
 export default function App() {
-  const [selectedTool, setSelectedTool] = useState("school-records");
+  const [selectedTool, setSelectedTool] = useState("profile");
   return (
     <BrowserRouter basename="portfolio">
       <Wrapper>
