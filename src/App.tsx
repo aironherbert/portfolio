@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { Link } from "@mui/material";
 import About from "./components/about";
 import Contact from "./components/contact";
+import useOnScreen from "./components/helpers/on-screen";
 import Home from "./components/home";
 import Projects from "./components/projects";
 
@@ -34,14 +34,31 @@ const Header = styled.div`
     }
   }
 `;
+
+const StyledLink = styled.a<{ isActive?: boolean }>`
+  border-bottom: ${(props) => (props.isActive ? "1px solid white" : "none")};
+`;
 export default function App() {
+  const home = useOnScreen("home");
+  const projects = useOnScreen("projects");
+  const about = useOnScreen("about");
+  const contact = useOnScreen("contact");
+
   return (
-    <Page>
+    <Page id="page">
       <Header>
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <StyledLink href="#home" isActive={home}>
+          Home
+        </StyledLink>
+        <StyledLink href="#projects" isActive={projects}>
+          Projects
+        </StyledLink>
+        <StyledLink href="#about" isActive={about}>
+          About
+        </StyledLink>
+        <StyledLink href="#contact" isActive={contact}>
+          Contact
+        </StyledLink>
       </Header>
       <Home />
       <Projects />
