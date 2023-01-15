@@ -11,7 +11,6 @@ const Container = styled.div<{ isOnScreen?: boolean }>`
   justify-content: center;
   align-items: center;
   gap: 1em;
-  padding: 0 1em;
   position: relative;
 `;
 
@@ -61,6 +60,18 @@ const Buttons = styled.div`
   position: absolute;
   bottom: 0;
   margin-bottom: 1em;
+`;
+
+const GrowerText = styled.span`
+  transition: 0.5s;
+  &:hover {
+    font-size: 1.2em;
+    color: #6c73e1;
+
+    transition: 0.5s;
+
+    cursor: pointer;
+  }
 `;
 export default function Home() {
   const [vantaEffect, setVantaEffect] = useState(null);
@@ -126,16 +137,16 @@ export default function Home() {
         </div>
         <Card>
           <h3 style={{ color: "white" }}>
-            Currently working as a Full Stack Developer
+            Experience in <GrowerText>Web Development</GrowerText> and{" "}
+            <GrowerText>Desktop Development</GrowerText>
           </h3>
           <h3 style={{ color: "white" }}>
-            Experience in web development and desktop development
+            Degree in{" "}
+            <GrowerText>Control and Automation Engineering</GrowerText>
           </h3>
           <h3 style={{ color: "white" }}>
-            Degree in Control and Automation Engineering
-          </h3>
-          <h3 style={{ color: "white" }}>
-            Master's degree in Technology of Sustainable Processes
+            Master's degree in{" "}
+            <GrowerText>Technology of Sustainable Processes</GrowerText>
           </h3>
         </Card>
       </FlexContainer>

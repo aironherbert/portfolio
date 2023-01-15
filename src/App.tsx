@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { useRef } from "react";
 import About from "./components/about";
 import Contact from "./components/contact";
 import useOnScreen from "./components/helpers/on-screen";
@@ -39,10 +40,14 @@ const StyledLink = styled.a<{ isActive?: boolean }>`
   border-bottom: ${(props) => (props.isActive ? "1px solid white" : "none")};
 `;
 export default function App() {
-  const home = useOnScreen("home");
-  const projects = useOnScreen("projects");
-  const about = useOnScreen("about");
-  const contact = useOnScreen("contact");
+  const homeRef = useRef(null);
+  const projectsRef = useRef(null);
+  const aboutRef = useRef(null);
+  const contactRef = useRef(null);
+  const home = useOnScreen(homeRef);
+  const projects = useOnScreen(projectsRef);
+  const about = useOnScreen(aboutRef);
+  const contact = useOnScreen(contactRef);
 
   return (
     <Page id="page">
@@ -60,10 +65,18 @@ export default function App() {
           Contact
         </StyledLink>
       </Header>
-      <Home />
-      <Projects />
-      <About />
-      <Contact />
+      <div style={{ display: "flex" }} ref={homeRef}>
+        <Home />
+      </div>
+      <div style={{ display: "flex" }} ref={projectsRef}>
+        <Projects />
+      </div>
+      <div style={{ display: "flex" }} ref={aboutRef}>
+        <About />
+      </div>
+      <div style={{ display: "flex" }} ref={contactRef}>
+        <Contact />
+      </div>
     </Page>
   );
 }
