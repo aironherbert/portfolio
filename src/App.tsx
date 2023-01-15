@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { useRef } from "react";
 import About from "./components/about";
 import Contact from "./components/contact";
-import useOnScreen from "./components/helpers/on-screen";
+import useOnScreen from "./helpers/on-screen";
 import Home from "./components/home";
 import Projects from "./components/projects";
 

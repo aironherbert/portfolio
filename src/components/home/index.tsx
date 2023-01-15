@@ -46,6 +46,8 @@ const ImageContainer = styled.div`
 `;
 
 const Card = styled.div`
+  flex-grow: 0;
+  overflow: visible;
   @media (max-width: 600px) {
     display: none;
   }
@@ -112,17 +114,6 @@ export default function Home() {
           <h2>and I'm a Software Engineer</h2>
           <SvgsContainer>
             <a
-              href="https://github.com/aironherbert"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src={process.env.PUBLIC_URL + "/svg/github.svg"}
-                alt="github"
-                style={{ width: "30px", height: "30px" }}
-              />
-            </a>
-            <a
               href="https://www.linkedin.com/in/airon-herbert/"
               target="_blank"
               rel="noreferrer"
@@ -131,6 +122,20 @@ export default function Home() {
                 src={process.env.PUBLIC_URL + "/svg/linkedin.svg"}
                 alt="github"
                 style={{ width: "30px", height: "30px" }}
+              />
+            </a>
+            <a
+              href="https://github.com/aironherbert"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/svg/github.svg"}
+                alt="github"
+                style={{
+                  width: "30px",
+                  height: "30px",
+                }}
               />
             </a>
           </SvgsContainer>
