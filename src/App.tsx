@@ -25,15 +25,16 @@ const Header = styled.div<{ home?: boolean }>`
   gap: 1em;
   z-index: 1;
 
-  background-color: ${(props) => (props.home ? "transparent" : "#bddeed")};
+  background-color: ${(props) => (props.home ? "transparent" : "#6c73e1")};
+  transition: 0.25s linear;
 
   & a {
     text-decoration: none;
     font-size: 20px;
-    color: #838282;
+    color: ${(props) => (props.home ? "white" : "#000000")};
 
     &:hover {
-      color: #6c73e1;
+      color: #1d2ae4;
     }
   }
 `;
@@ -41,7 +42,7 @@ const Header = styled.div<{ home?: boolean }>`
 const StyledLink = styled.a<{ isActive?: boolean; blackBorder?: boolean }>`
   border-bottom: ${(props) =>
     props.isActive
-      ? `1px solid ${props.blackBorder ? "black" : "white"}`
+      ? `2px solid ${props.blackBorder ? "black" : "white"}`
       : "none"};
 `;
 export default function App() {
