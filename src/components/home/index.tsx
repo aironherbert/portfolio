@@ -102,7 +102,7 @@ export default function Home() {
   return (
     <Container ref={myRef} id="home">
       <FlexContainer>
-        <div style={{ zIndex: 1, color: "white" }}>
+        <div style={{ zIndex: 1, color: "white", marginLeft: "1em" }}>
           <ImageContainer>
             <img
               src={process.env.PUBLIC_URL + "/profile.jpg"}

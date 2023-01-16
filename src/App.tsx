@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 import { useRef } from "react";
 import About from "./components/about";
 import Contact from "./components/contact";
-import useOnScreen from "./helpers/on-screen";
 import Home from "./components/home";
 import Projects from "./components/projects";
+import useOnScreen from "./helpers/on-screen";
 
 const Page = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ const Page = styled.div`
   overflow-x: hidden;
   position: relative;
 `;
-const Header = styled.div`
+const Header = styled.div<{ home?: boolean }>`
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -24,6 +24,8 @@ const Header = styled.div`
   position: fixed;
   gap: 1em;
   z-index: 1;
+
+  background-color: ${(props) => (props.home ? "transparent" : "#bddeed")};
 
   & a {
     text-decoration: none;
@@ -36,8 +38,11 @@ const Header = styled.div`
   }
 `;
 
-const StyledLink = styled.a<{ isActive?: boolean }>`
-  border-bottom: ${(props) => (props.isActive ? "1px solid white" : "none")};
+const StyledLink = styled.a<{ isActive?: boolean; blackBorder?: boolean }>`
+  border-bottom: ${(props) =>
+    props.isActive
+      ? `1px solid ${props.blackBorder ? "black" : "white"}`
+      : "none"};
 `;
 export default function App() {
   const homeRef = useRef(null);
@@ -51,17 +56,17 @@ export default function App() {
 
   return (
     <Page id="page">
-      <Header>
+      <Header style={{ zIndex: 100 }} home={home}>
         <StyledLink href="#home" isActive={home}>
           Home
         </StyledLink>
-        <StyledLink href="#projects" isActive={projects}>
+        <StyledLink href="#projects" isActive={projects} blackBorder>
           Projects
         </StyledLink>
-        <StyledLink href="#about" isActive={about}>
+        <StyledLink href="#about" isActive={about} blackBorder>
           About
         </StyledLink>
-        <StyledLink href="#contact" isActive={contact}>
+        <StyledLink href="#contact" isActive={contact} blackBorder>
           Contact
         </StyledLink>
       </Header>

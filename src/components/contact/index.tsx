@@ -1,17 +1,23 @@
 import styled from "@emotion/styled";
 
 const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  background-color: black;
-  & h1 {
-    color: white;
-  }
+  flex: 1;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: white;
+`;
+
+const Content = styled.div`
+  flex: 1;
+  height: calc(100% - 2em);
+  margin: 4em 1em;
 `;
 export default function Contact() {
   return (
     <Container id="contact">
-      <h1>Contact</h1>
+      <Content>
+        <h1>Contact</h1>
+      </Content>
     </Container>
   );
 }
