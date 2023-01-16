@@ -65,6 +65,8 @@ const Buttons = styled.div`
 `;
 
 const GrowerText = styled.span`
+  font-size: 1.2em;
+
   transition: 0.5s;
   &:hover {
     font-size: 1.2em;
@@ -142,8 +144,8 @@ export default function Home() {
         </div>
         <Card>
           <h3 style={{ color: "white" }}>
-            Experience in <GrowerText>Web Development</GrowerText> and{" "}
-            <GrowerText>Desktop Development</GrowerText>
+            Experience in <GrowerText>Web Development</GrowerText> and
+            <GrowerText> Desktop Development</GrowerText>
           </h3>
           <h3 style={{ color: "white" }}>
             Degree in{" "}
