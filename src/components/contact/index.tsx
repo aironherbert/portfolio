@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Container = styled.div`
   flex: 1;
@@ -13,10 +15,54 @@ const Content = styled.div`
   margin: 4em 1em;
 `;
 export default function Contact() {
+  const form = useRef(null);
+
+  console.log(process.env.REACT_APP_SERVICE_ID);
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID ?? "",
+        process.env.REACT_APP_TEMPLATE_ID ?? "",
+        form.current ?? "",
+        process.env.REACT_APP_PUBLIC_KEY ?? ""
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <Container id="contact">
       <Content>
         <h1>Contact</h1>
+        <form ref={form} onSubmit={sendEmail}>
+          <label>
+            Name <input type="text" name="name" />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" />
+          </label>
+
+          <label>
+            Subject
+            <input type="text" name="subject" />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" />
+          </label>
+
+          <input type="submit" value="Send" />
+        </form>
       </Content>
     </Container>
   );
