@@ -17,7 +17,6 @@ const Content = styled.div`
 export default function Contact() {
   const form = useRef(null);
 
-  console.log(process.env.REACT_APP_SERVICE_ID);
   const sendEmail = (e) => {
     e.preventDefault();
 
