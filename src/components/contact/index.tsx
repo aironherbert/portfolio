@@ -41,7 +41,15 @@ export default function Contact() {
     <Container id="contact">
       <Content>
         <h1>Contact</h1>
-        <form ref={form} onSubmit={sendEmail}>
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "start",
+          }}
+        >
           <label>
             Name <input type="text" name="name" />
           </label>
