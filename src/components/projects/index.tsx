@@ -17,7 +17,7 @@ export default function Projects() {
   return (
     <Container id="projects">
       <Content>
-        <h1>Projects</h1>
+        <h1>My projects</h1>
       </Content>
     </Container>
   );

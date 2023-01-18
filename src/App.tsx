@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Home from "./components/home";
@@ -46,6 +46,7 @@ const StyledLink = styled.a<{ isActive?: boolean; blackBorder?: boolean }>`
       : "none"};
 `;
 export default function App() {
+  const [loading, setLoading] = useState(true);
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
   const aboutRef = useRef(null);
@@ -55,8 +56,21 @@ export default function App() {
   const about = useOnScreen(aboutRef);
   const contact = useOnScreen(contactRef);
 
+  useEffect(() => {
+    const onPageLoad = () => {
+      setLoading(false);
+    };
+
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad, false);
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
+
   return (
-    <Page id="page">
+    <Page id="page" style={{ opacity: loading ? 0 : 1 }}>
       <Header style={{ zIndex: 100 }} home={home}>
         <StyledLink href="#home" isActive={home}>
           Home
