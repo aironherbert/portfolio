@@ -6,15 +6,15 @@ const Container = styled.div`
   flex: 1;
   min-height: 100vh;
   overflow: hidden;
-  background-color: white;
   position: relative;
+  background-color: #f5f5f5;
 `;
 
 const Content = styled.div`
   flex: 1;
   height: calc(100% - 2em);
   margin: 4em 1em;
-  background-color: white;
+  background-color: #f5f5f5;
 
   & > p {
     font-size: 1.2em;
