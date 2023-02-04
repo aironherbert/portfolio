@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@emailjs/browser": "^3.10.0",
-    "gh-pages": "^4.0.0",
+    "gh-pages": "^5.0.0",
     "react-router-dom": "^6.6.2",
     "vanta": "^0.5.24"
   }
