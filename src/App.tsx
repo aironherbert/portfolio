@@ -1,10 +1,10 @@
-import styled from "@emotion/styled";
-import { useEffect, useRef, useState } from "react";
-import About from "./components/about";
-import Contact from "./components/contact";
-import Home from "./components/home";
-import Projects from "./components/projects";
-import useOnScreen from "./helpers/on-screen";
+import styled from '@emotion/styled'
+import { useEffect, useRef, useState } from 'react'
+import About from './components/about'
+import Contact from './components/contact'
+import Home from './components/home'
+import Projects from './components/projects'
+import useOnScreen from './helpers/on-screen'
 
 const Page = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ const Page = styled.div`
   scroll-behavior: smooth;
   overflow-x: hidden;
   position: relative;
-`;
+`
 const Header = styled.div<{ home?: boolean }>`
   width: 100%;
   overflow: hidden;
@@ -25,52 +25,52 @@ const Header = styled.div<{ home?: boolean }>`
   gap: 1em;
   z-index: 1;
 
-  background-color: ${(props) => (props.home ? "transparent" : "#6c73e1")};
+  background-color: ${(props) => (props.home ? 'transparent' : '#6c73e1')};
   transition: 0.25s linear;
 
   & a {
     text-decoration: none;
     font-size: 20px;
-    color: ${(props) => (props.home ? "white" : "#000000")};
+    color: ${(props) => (props.home ? 'white' : '#000000')};
 
     &:hover {
       color: #1d2ae4;
     }
   }
-`;
+`
 
 const StyledLink = styled.a<{ isActive?: boolean; blackBorder?: boolean }>`
   border-bottom: ${(props) =>
     props.isActive
-      ? `2px solid ${props.blackBorder ? "black" : "white"}`
-      : "none"};
-`;
+      ? `2px solid ${props.blackBorder ? 'black' : 'white'}`
+      : 'none'};
+`
 export default function App() {
-  const [loading, setLoading] = useState(true);
-  const homeRef = useRef(null);
-  const projectsRef = useRef(null);
-  const aboutRef = useRef(null);
-  const contactRef = useRef(null);
-  const home = useOnScreen(homeRef);
-  const projects = useOnScreen(projectsRef);
-  const about = useOnScreen(aboutRef);
-  const contact = useOnScreen(contactRef);
+  // const [loading, setLoading] = useState(true);
+  const homeRef = useRef(null)
+  const projectsRef = useRef(null)
+  const aboutRef = useRef(null)
+  const contactRef = useRef(null)
+  const home = useOnScreen(homeRef)
+  const projects = useOnScreen(projectsRef)
+  const about = useOnScreen(aboutRef)
+  const contact = useOnScreen(contactRef)
 
-  useEffect(() => {
-    const onPageLoad = () => {
-      setLoading(false);
-    };
+  // useEffect(() => {
+  //   const onPageLoad = () => {
+  //     setLoading(false);
+  //   };
 
-    if (document.readyState === "complete") {
-      onPageLoad();
-    } else {
-      window.addEventListener("load", onPageLoad, false);
-      return () => window.removeEventListener("load", onPageLoad);
-    }
-  }, []);
+  //   if (document.readyState === "complete") {
+  //     onPageLoad();
+  //   } else {
+  //     window.addEventListener("load", onPageLoad, false);
+  //     return () => window.removeEventListener("load", onPageLoad);
+  //   }
+  // }, []);
 
   return (
-    <Page id="page" style={{ opacity: loading ? 0 : 1 }}>
+    <Page id="page">
       <Header style={{ zIndex: 100 }} home={home}>
         <StyledLink href="#home" isActive={home}>
           Home
@@ -85,18 +85,18 @@ export default function App() {
           Contact
         </StyledLink>
       </Header>
-      <div style={{ display: "flex" }} ref={homeRef}>
+      <div style={{ display: 'flex' }} ref={homeRef}>
         <Home />
       </div>
-      <div style={{ display: "flex" }} ref={projectsRef}>
+      <div style={{ display: 'flex' }} ref={projectsRef}>
         <Projects />
       </div>
-      <div style={{ display: "flex" }} ref={aboutRef}>
+      <div style={{ display: 'flex' }} ref={aboutRef}>
         <About />
       </div>
-      <div style={{ display: "flex" }} ref={contactRef}>
+      <div style={{ display: 'flex' }} ref={contactRef}>
         <Contact />
       </div>
     </Page>
-  );
+  )
 }
