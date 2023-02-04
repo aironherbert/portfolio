@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
+import React from "react";
 import { useEffect, useRef, useState } from "react";
 import NET from "vanta/dist/vanta.net.min.js";
 

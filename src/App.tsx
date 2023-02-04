@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import React from "react"
 import { useEffect, useRef, useState } from 'react'
 import About from './components/about'
 import Contact from './components/contact'
