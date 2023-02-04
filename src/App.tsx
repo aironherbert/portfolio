@@ -88,7 +88,7 @@ export default function App() {
       <div style={{ display: 'flex' }} ref={homeRef}>
         <Home />
       </div>
-      <div style={{ display: 'flex' }} ref={projectsRef}>
+      {/* <div style={{ display: 'flex' }} ref={projectsRef}>
         <Projects />
       </div>
       <div style={{ display: 'flex' }} ref={aboutRef}>
@@ -96,7 +96,7 @@ export default function App() {
       </div>
       <div style={{ display: 'flex' }} ref={contactRef}>
         <Contact />
-      </div>
+      </div> */}
     </Page>
   )
 }
