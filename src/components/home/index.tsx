@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 import React from "react";
+import { useEffect, useRef, useState } from "react";
+import NET from "vanta/dist/vanta.net.min.js";
 
 const Container = styled.div<{ isOnScreen?: boolean }>`
   width: 100%;
@@ -77,8 +79,31 @@ const GrowerText = styled.span`
   }
 `;
 export default function Home() {
+  const [vantaEffect, setVantaEffect] = useState(null);
+  const myRef = useRef(null);
+
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        NET({
+          el: myRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x6c73e1,
+          points: 15.0,
+          maxDistance: 20.0,
+          spacing: 20.0,
+        })
+      );
+    }
+  }, []);
   return (
-    <Container id="home">
+    <Container ref={myRef} id="home">
       <FlexContainer>
         <div style={{ zIndex: 1, color: "white", marginLeft: "1em" }}>
           <ImageContainer>
