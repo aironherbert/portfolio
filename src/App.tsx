@@ -1,16 +1,16 @@
 import Portfolio from "./components/portfolio"
 
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { HashRouter, Route, Routes } from "react-router-dom"
 import Curriculum from "./components/curriculum"
 import Redirect from "./helpers/redirect"
 export default function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
-                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/" element={<Portfolio />} />
                 <Route path="/curriculum" element={<Curriculum />} />
-                <Route path="*" element={<Redirect to="/portfolio" />} />
+                <Route path="*" element={<Redirect to="/" />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
