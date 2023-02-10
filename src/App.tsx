@@ -7,7 +7,7 @@ export default function App() {
     return (
         <HashRouter>
             <Routes>
-                <Route path="/" element={<Portfolio />} />
+                <Route path="/home" element={<Portfolio />} />
                 <Route path="/curriculum" element={<Curriculum />} />
                 <Route path="*" element={<Redirect to="/" />} />
             </Routes>
