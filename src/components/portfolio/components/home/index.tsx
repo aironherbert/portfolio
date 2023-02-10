@@ -14,9 +14,9 @@ const Container = styled.div<{ isOnScreen?: boolean }>`
     background: linear-gradient(270deg, #103bc1, #181818);
     background-size: 400% 400%;
 
-    -webkit-animation: AnimationName 30s ease infinite;
-    -moz-animation: AnimationName 30s ease infinite;
-    animation: AnimationName 30s ease infinite;
+    -webkit-animation: AnimationName 15s ease infinite;
+    -moz-animation: AnimationName 15s ease infinite;
+    animation: AnimationName 15s ease infinite;
 
     @-webkit-keyframes AnimationName {
         0% {
