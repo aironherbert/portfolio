@@ -8,15 +8,12 @@ import Redirect from "./helpers/redirect"
 export default function App() {
     return (
         <>
-            <BrowserRouter>
+            <BrowserRouter basename="portfolio">
                 <Routes>
                     <Route path="/">
-                        <Route path="portfolio" element={<Portfolio />} />
+                        <Route path="" element={<Portfolio />} />
                         <Route path="curriculum" element={<Curriculum />} />
-                        <Route
-                            path="*"
-                            element={<Redirect to="/portfolio" />}
-                        />
+                        <Route path="*" element={<Redirect to="/" />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
