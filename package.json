@@ -49,6 +49,7 @@
   "devDependencies": {
     "@emailjs/browser": "^3.10.0",
     "gh-pages": "^5.0.0",
+    "react-router": "^6.8.1",
     "react-router-dom": "^6.8.1"
   }
 }

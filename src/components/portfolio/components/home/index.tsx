@@ -129,7 +129,7 @@ export default function Home() {
                     </ImageContainer>
                     <h3>Hello! My name is</h3>
                     <h1>Airon Herbert</h1>
-                    <h2>and I'm a Software Engineer</h2>
+                    <h2>Software Developer/Engineer</h2>
                     <SvgsContainer>
                         <a
                             href="https://www.linkedin.com/in/airon-herbert/"
