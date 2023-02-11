@@ -11,10 +11,10 @@ export default function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/">
-                        <Route path="/portfolio" element={<Portfolio />} />
-                        <Route path="/curriculum" element={<Curriculum />} />
+                        <Route path="portfolio" element={<Portfolio />} />
+                        <Route path="curriculum" element={<Curriculum />} />
                         <Route
-                            path="/*"
+                            path="*"
                             element={<Redirect to="/portfolio" />}
                         />
                     </Route>
