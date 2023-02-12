@@ -9,13 +9,13 @@ const Container = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
 
     & .page {
         width: 209.2mm;
         height: 296.3mm;
         background-color: white;
-        margin: 0.5cm;
+        margin: 0.5cm auto;
         padding: 0;
     }
 `
