@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { useEffect } from "react"
 import Page from "./components/page"
 import Root from "./components/root"
 
@@ -39,6 +40,15 @@ const RightContainer = styled.div`
 `
 
 export default function Curriculum() {
+    // smooth to auto
+    useEffect(() => {
+        document.documentElement.style.scrollBehavior = "auto"
+        window.scrollTo(0, 0)
+        return () => {
+            document.documentElement.style.scrollBehavior = "smooth"
+        }
+    }, [])
+
     return (
         <Root layout="portrait">
             <Page style={{ pageBreakAfter: "always" }}>

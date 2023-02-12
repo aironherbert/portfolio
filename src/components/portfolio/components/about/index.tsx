@@ -98,7 +98,11 @@ export default function About() {
                         variant="contained"
                         color="primary"
                         startIcon={<DescriptionIcon />}
-                        href="portfolio/#/curriculum"
+                        href="#/app/curriculum"
+                        onClick={() => {
+                            document.documentElement.style.scrollBehavior =
+                                "auto"
+                        }}
                     >
                         See my curriculum
                     </Button>

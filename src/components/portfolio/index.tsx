@@ -41,7 +41,7 @@ const Header = styled.div<{ home?: boolean }>`
     }
 `
 
-const StyledLink = styled.a<{ isActive?: boolean; blackBorder?: boolean }>`
+const StyledLink = styled.div<{ isActive?: boolean; blackBorder?: boolean }>`
     border-bottom: ${(props) =>
         props.isActive
             ? `2px solid ${props.blackBorder ? "black" : "white"}`

@@ -182,7 +182,7 @@ export default function Home() {
             </FlexContainer>
             <Buttons>
                 <HashLink to="#projects" style={{ textDecoration: "none" }}>
-                    <Button size="large" variant="contained">
+                    <Button size="large" variant="contained" href="#projects">
                         See my projects
                     </Button>
                 </HashLink>
