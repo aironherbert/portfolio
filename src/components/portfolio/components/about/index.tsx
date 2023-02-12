@@ -98,8 +98,9 @@ export default function About() {
                         variant="contained"
                         color="primary"
                         startIcon={<DescriptionIcon />}
+                        href="portfolio/#/curriculum"
                     >
-                        <a href="/#/curriculum">See my curriculum</a>
+                        See my curriculum
                     </Button>
                 </div>
             </Content>
