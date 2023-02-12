@@ -6,6 +6,8 @@ import Contact from "./components/contact"
 import Home from "./components/home"
 import Projects from "./components/projects"
 
+import { HashLink } from "react-router-hash-link"
+
 const Page = styled.div`
     display: flex;
     flex-direction: column;
@@ -72,17 +74,17 @@ export default function Portfolio() {
     return (
         <Page id="page" style={{ opacity: loading ? 0 : 1 }}>
             <Header style={{ zIndex: 100 }} home={home}>
-                <StyledLink href="#home" isActive={home}>
-                    Home
+                <StyledLink isActive={home}>
+                    <HashLink to="#home">Home</HashLink>
                 </StyledLink>
-                <StyledLink href="#projects" isActive={projects} blackBorder>
-                    Projects
+                <StyledLink isActive={projects} blackBorder>
+                    <HashLink to="#projects">Projects</HashLink>
                 </StyledLink>
-                <StyledLink href="#about" isActive={about} blackBorder>
-                    About
+                <StyledLink isActive={about} blackBorder>
+                    <HashLink to="#about">About</HashLink>
                 </StyledLink>
-                <StyledLink href="#contact" isActive={contact} blackBorder>
-                    Contact
+                <StyledLink isActive={contact} blackBorder>
+                    <HashLink to="#contact">Contact</HashLink>
                 </StyledLink>
             </Header>
             <div style={{ display: "flex" }} ref={homeRef}>
