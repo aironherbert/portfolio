@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import { Button } from "@mui/material"
+import { HashLink } from "react-router-hash-link"
 
 const Container = styled.div<{ isOnScreen?: boolean }>`
     width: 100%;
@@ -98,8 +99,7 @@ const Buttons = styled.div`
     justify-content: center;
     align-items: center;
     gap: 1em;
-    position: absolute;
-    bottom: 0;
+
     margin-bottom: 1em;
 `
 
@@ -181,18 +181,22 @@ export default function Home() {
                 </Card>
             </FlexContainer>
             <Buttons>
-                <Button size="large" variant="contained" href="#projects">
-                    See my projects
-                </Button>
-                <Button
-                    size="large"
-                    variant="outlined"
-                    href="#about"
-                    color="info"
-                    sx={{ fontWeight: 900 }}
-                >
-                    More about me
-                </Button>
+                <HashLink to="#projects" style={{ textDecoration: "none" }}>
+                    <Button size="large" variant="contained">
+                        See my projects
+                    </Button>
+                </HashLink>
+                <HashLink to="#about" style={{ textDecoration: "none" }}>
+                    <Button
+                        size="large"
+                        variant="outlined"
+                        href="#about"
+                        color="info"
+                        sx={{ fontWeight: 900 }}
+                    >
+                        More about me
+                    </Button>
+                </HashLink>
             </Buttons>
         </Container>
     )

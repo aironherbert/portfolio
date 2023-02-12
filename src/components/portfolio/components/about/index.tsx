@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import { Button } from "@mui/material"
 import DescriptionIcon from "@mui/icons-material/Description"
+import { HashLink } from "react-router-hash-link"
 
 const Container = styled.div`
     flex: 1;
@@ -98,7 +99,7 @@ export default function About() {
                         color="primary"
                         startIcon={<DescriptionIcon />}
                     >
-                        See my curriculum
+                        <a href="/#/curriculum">See my curriculum</a>
                     </Button>
                 </div>
             </Content>
