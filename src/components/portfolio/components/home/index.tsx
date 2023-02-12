@@ -12,7 +12,7 @@ const Container = styled.div<{ isOnScreen?: boolean }>`
     gap: 1em;
     position: relative;
 
-    background: linear-gradient(270deg, #103bc1, #181818);
+    background: linear-gradient(270deg, #103bc1, #838383);
     background-size: 400% 400%;
 
     -webkit-animation: AnimationName 15s ease infinite;
@@ -189,9 +189,9 @@ export default function Home() {
                 <HashLink to="#about" style={{ textDecoration: "none" }}>
                     <Button
                         size="large"
-                        variant="outlined"
+                        variant="contained"
                         href="#about"
-                        color="info"
+                        color="success"
                         sx={{ fontWeight: 900 }}
                     >
                         More about me
