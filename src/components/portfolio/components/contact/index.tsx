@@ -7,8 +7,9 @@ import { Box } from "@mui/system"
 const Container = styled.div`
     flex: 1;
     min-height: 100vh;
-    overflow: hidden;
     background-color: white;
+    display: flex;
+    flex-direction: column;
 `
 
 const Content = styled.div`
@@ -23,6 +24,16 @@ const Form = styled.form`
     gap: 1em;
     width: 400px;
     align-items: end;
+`
+
+const Footer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2em;
+    background-color: #1d2ae4;
+    color: white;
 `
 
 export default function Contact() {
@@ -157,6 +168,7 @@ export default function Contact() {
                     </Form>
                 </Box>
             </Content>
+            <Footer />
         </Container>
     )
 }

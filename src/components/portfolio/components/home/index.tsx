@@ -12,46 +12,8 @@ const Container = styled.div<{ isOnScreen?: boolean }>`
     gap: 1em;
     position: relative;
 
-    background: linear-gradient(270deg, #103bc1, #838383);
-    background-size: 400% 400%;
-
-    -webkit-animation: AnimationName 15s ease infinite;
-    -moz-animation: AnimationName 15s ease infinite;
-    animation: AnimationName 15s ease infinite;
-
-    @-webkit-keyframes AnimationName {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
-    @-moz-keyframes AnimationName {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
-    @keyframes AnimationName {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
+    background-image: ${() =>
+        `url(${process.env.PUBLIC_URL}/svg/background.svg)`};
 `
 
 const FlexContainer = styled.div`

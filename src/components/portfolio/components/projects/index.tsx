@@ -22,6 +22,18 @@ const Grid = styled.div`
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2em;
+
+    @media (max-width: 1200px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 const Card = styled.div`
