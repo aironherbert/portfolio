@@ -1,7 +1,6 @@
 import styled from "@emotion/styled"
 import { Button } from "@mui/material"
 import DescriptionIcon from "@mui/icons-material/Description"
-import { HashLink } from "react-router-hash-link"
 
 const Container = styled.div`
     flex: 1;

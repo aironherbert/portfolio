@@ -7,6 +7,8 @@ import Home from "./components/home"
 import Projects from "./components/projects"
 
 import { HashLink } from "react-router-hash-link"
+import { IconButton } from "@mui/material"
+import { IconFlagTR, IconFlagDE, IconFlagUS } from "material-ui-flags"
 
 const Page = styled.div`
     display: flex;
@@ -74,6 +76,17 @@ export default function Portfolio() {
     return (
         <Page id="page" style={{ opacity: loading ? 0 : 1 }}>
             <Header id="header" style={{ zIndex: 100 }} home={home}>
+                <div>
+                    <IconButton>
+                        <IconFlagTR />
+                    </IconButton>
+                    <IconButton>
+                        <IconFlagDE />
+                    </IconButton>
+                    <IconButton>
+                        <IconFlagUS />
+                    </IconButton>
+                </div>
                 <StyledLink isActive={home}>
                     <HashLink to="#home">Home</HashLink>
                 </StyledLink>
