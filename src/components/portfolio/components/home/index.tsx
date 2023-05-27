@@ -31,6 +31,7 @@ const SvgsContainer = styled.div`
     align-items: center;
     gap: 1em;
     margin-top: 1em;
+    color: black;
 `
 
 const ImageContainer = styled.div`
@@ -61,22 +62,11 @@ const Buttons = styled.div`
     justify-content: center;
     align-items: center;
     gap: 1em;
-
-    margin-bottom: 1em;
+    padding: 0 4em 1em 4em;
 `
 
 const GrowerText = styled.span`
-    font-size: 1.2em;
-
-    transition: 0.5s;
-    &:hover {
-        font-size: 1.2em;
-        color: #6c73e1;
-
-        transition: 0.5s;
-
-        cursor: pointer;
-    }
+    font-size: 1.5em;
 `
 export default function Home() {
     return (
@@ -103,7 +93,13 @@ export default function Home() {
                                     process.env.PUBLIC_URL + "/svg/linkedin.svg"
                                 }
                                 alt="github"
-                                style={{ width: "30px", height: "30px" }}
+                                style={{
+                                    width: "40px",
+                                    height: "40px",
+                                    backgroundColor: "white",
+                                    padding: "5px",
+                                    borderRadius: "5px",
+                                }}
                             />
                         </a>
                         <a
@@ -115,8 +111,11 @@ export default function Home() {
                                 src={process.env.PUBLIC_URL + "/svg/github.svg"}
                                 alt="github"
                                 style={{
-                                    width: "30px",
-                                    height: "30px",
+                                    width: "40px",
+                                    height: "40px",
+                                    backgroundColor: "white",
+                                    padding: "5px",
+                                    borderRadius: "5px",
                                 }}
                             />
                         </a>
@@ -144,11 +143,19 @@ export default function Home() {
             </FlexContainer>
             <Buttons>
                 <HashLink to="#projects" style={{ textDecoration: "none" }}>
-                    <Button size="large" variant="contained" href="#projects">
+                    <Button
+                        size="large"
+                        variant="contained"
+                        href="#projects"
+                        style={{ textAlign: "center" }}
+                    >
                         See my projects
                     </Button>
                 </HashLink>
-                <HashLink to="#about" style={{ textDecoration: "none" }}>
+                <HashLink
+                    to="#about"
+                    style={{ textDecoration: "none", textAlign: "center" }}
+                >
                     <Button
                         size="large"
                         variant="contained"

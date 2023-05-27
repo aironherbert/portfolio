@@ -38,3 +38,9 @@ html {
         box-shadow: none;
     }
 }
+
+@media (max-width: 500px) {
+    #header {
+        display: none;
+    }
+}

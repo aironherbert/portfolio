@@ -73,7 +73,7 @@ export default function Portfolio() {
     }, [])
     return (
         <Page id="page" style={{ opacity: loading ? 0 : 1 }}>
-            <Header style={{ zIndex: 100 }} home={home}>
+            <Header id="header" style={{ zIndex: 100 }} home={home}>
                 <StyledLink isActive={home}>
                     <HashLink to="#home">Home</HashLink>
                 </StyledLink>
