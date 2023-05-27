@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 
 const Container = styled.div`
     overflow: auto;
-    min-width: 100vw;
+    width: 100vw;
     min-height: 100vh;
     background-color: #1a193a;
     box-sizing: border-box;
@@ -13,9 +13,8 @@ const Container = styled.div`
 
     & .page {
         width: 209.2mm;
-        height: 296.3mm;
+        height: 295mm;
         background-color: white;
-        margin: 0.5cm auto;
         padding: 0;
     }
 `

@@ -3,8 +3,10 @@ import { ReactNode } from "react"
 
 const Container = styled.div`
     display: flex;
-    margin: 0;
+    width: 100%;
+    height: 100%;
     padding: 0;
+    box-sizing: border-box;
 `
 export default function Page({
     children,

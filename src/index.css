@@ -26,21 +26,37 @@ html {
 
 @page {
     margin: 0;
-}
-
-@page :first {
-    margin-top: 1px;
+    padding: 0;
 }
 
 @media print {
     .page {
-        margin: 0 !important;
-        box-shadow: none;
+        margin: 0;
+        padding: 0;
     }
 }
 
 @media (max-width: 500px) {
     #header {
         display: none;
+    }
+}
+
+@media screen {
+    html,
+    body {
+        background-color: #747474;
+    }
+
+    #root {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page {
+        background: white;
+        box-shadow: 0 0.5mm 2mm rgba(0, 0, 0, 0.3);
+        margin: 5mm;
     }
 }
