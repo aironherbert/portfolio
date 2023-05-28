@@ -8,7 +8,7 @@ import Projects from "./components/projects"
 
 import { HashLink } from "react-router-hash-link"
 import { IconButton } from "@mui/material"
-import { IconFlagTR, IconFlagDE, IconFlagUS } from "material-ui-flags"
+import { IconFlagBR, IconFlagUS } from "material-ui-flags"
 
 const Page = styled.div`
     display: flex;
@@ -50,6 +50,24 @@ const StyledLink = styled.div<{ isActive?: boolean; blackBorder?: boolean }>`
             : "none"};
 `
 
+const FlagContainer = styled.div<{ isActive?: boolean }>`
+    border: ${(props) =>
+        props.isActive ? "2px solid blue" : "2px solid transparent"};
+    transform: scale(${(props) => (props.isActive ? 1.2 : 1)});
+    padding: 4px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0);
+    cursor: pointer;
+
+    &:hover {
+        border: 2px solid #1d2ae4;
+    }
+
+    &:active {
+        border: 2px solid rgba(0, 0, 0, 0.5);
+    }
+`
+
 export default function Portfolio() {
     const [loading, setLoading] = useState(true)
     const homeRef = useRef(null)
@@ -60,6 +78,8 @@ export default function Portfolio() {
     const projects = useOnScreen(projectsRef)
     const about = useOnScreen(aboutRef)
     const contact = useOnScreen(contactRef)
+
+    const [leng, setLeng] = useState<"en" | "pt">("en")
 
     useEffect(() => {
         const onPageLoad = () => {
@@ -76,17 +96,31 @@ export default function Portfolio() {
     return (
         <Page id="page" style={{ opacity: loading ? 0 : 1 }}>
             <Header id="header" style={{ zIndex: 100 }} home={home}>
-                <div>
-                    <IconButton>
-                        <IconFlagTR />
-                    </IconButton>
-                    <IconButton>
-                        <IconFlagDE />
-                    </IconButton>
-                    <IconButton>
-                        <IconFlagUS />
-                    </IconButton>
+                <div
+                    style={{
+                        display: "flex",
+                        gap: "1em",
+                        borderRadius: "10px",
+                    }}
+                >
+                    <FlagContainer
+                        isActive={leng === "en"}
+                        onClick={() => setLeng("en")}
+                    >
+                        <IconButton sx={{ padding: 0 }}>
+                            <IconFlagUS />
+                        </IconButton>
+                    </FlagContainer>
+                    <FlagContainer
+                        isActive={leng === "pt"}
+                        onClick={() => setLeng("pt")}
+                    >
+                        <IconButton sx={{ padding: 0 }}>
+                            <IconFlagBR />
+                        </IconButton>
+                    </FlagContainer>
                 </div>
+
                 <StyledLink isActive={home}>
                     <HashLink to="#home">Home</HashLink>
                 </StyledLink>
