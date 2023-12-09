@@ -5,6 +5,8 @@ import { Route } from "react-router"
 
 import Curriculum from "./components/curriculum"
 import Redirect from "./helpers/redirect"
+import Playground from "components/playground"
+import Lab from "components/lab"
 export default function App() {
     return (
         <>
@@ -15,6 +17,11 @@ export default function App() {
                         <Route
                             path="/app/curriculum"
                             element={<Curriculum />}
+                        />
+                        <Route path="/app/lab" element={<Lab />} />
+                        <Route
+                            path="/app/playground"
+                            element={<Playground />}
                         />
                     </Route>
 
