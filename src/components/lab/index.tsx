@@ -1,3 +1,5 @@
+import Blog from "./blog/Blog"
+
 export default function Lab() {
-    return <div>Lab</div>
+    return <Blog />
 }

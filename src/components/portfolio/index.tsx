@@ -7,6 +7,7 @@ import Home from "./components/home"
 import Projects from "./components/projects"
 
 import { HashLink } from "react-router-hash-link"
+import { Link } from "react-router-dom"
 
 const Page = styled.div`
     display: flex;
@@ -85,6 +86,9 @@ export default function Portfolio() {
                 </StyledLink>
                 <StyledLink isActive={contact} blackBorder>
                     <HashLink to="#contact">Contact</HashLink>
+                </StyledLink>
+                <StyledLink isActive={false} blackBorder>
+                    <Link to="/lab">Lab</Link>
                 </StyledLink>
             </Header>
             <div style={{ display: "flex" }} ref={homeRef}>
